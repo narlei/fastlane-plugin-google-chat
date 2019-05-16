@@ -8,8 +8,6 @@
     module Actions
       class GoogleChatAction < Action
         def self.run(params)
-          
-          UI.message(params)
 
           uri = URI.parse(params[:webhook])
           cards = {cards: [

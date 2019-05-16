@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'narlei.guitar@gmail.com'
 
   spec.summary       = 'Send messages to Google Chat'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-google_chat"
+  spec.homepage      = "https://github.com/narlei/fastlane-plugin-google-chat"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
