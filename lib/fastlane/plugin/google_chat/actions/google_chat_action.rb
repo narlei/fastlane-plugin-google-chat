@@ -60,6 +60,8 @@
           
           # Send the request
           response = http.request(request)
+          UI.message(cards.to_json)
+          UI.message("---------------")
           UI.message(response.body)
           UI.message("The google_chat plugin is working!")
         end
