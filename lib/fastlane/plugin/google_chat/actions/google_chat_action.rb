@@ -12,8 +12,6 @@
           UI.message(params)
 
           uri = URI.parse(params[:webhook])
-          
-          header = {'Content-Type': 'application/json'}
           cards = [
             {
               header: {
@@ -57,12 +55,12 @@
           http = Net::HTTP.new(uri.host, uri.port)
           http.use_ssl = true
           http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-          request = Net::HTTP::Post.new(uri.request_uri, header)
+          request = Net::HTTP::Post.new(uri.request_uri)
           request.body = cards.to_json
           
           # Send the request
           response = http.request(request)
-          UI.message(response)
+          UI.message(response.body)
           UI.message("The google_chat plugin is working!")
         end
         
