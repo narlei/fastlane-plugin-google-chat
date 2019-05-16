@@ -17,7 +17,7 @@
               header: {
                 title: params[:title],
                 subtitle: params[:description],
-                imageUrl: 'https://collegeinfogeek.com/wp-content/uploads/2016/08/Google_Calendar_Logo.png'
+                imageUrl: params[:imageUrl]
               },
               sections: [
                 {
@@ -60,10 +60,8 @@
           
           # Send the request
           response = http.request(request)
-          UI.message(cards.to_json)
-          UI.message("---------------")
-          UI.message(response.body)
-          UI.message("The google_chat plugin is working!")
+
+          UI.message("Message sent!")
         end
         
         def self.description
@@ -85,6 +83,11 @@
         
         def self.available_options
           [
+            FastlaneCore::ConfigItem.new(key: :imageUrl,
+                                    env_name: "GOOGLE_CHAT_imageUrl",
+                                description: "A description of your option",
+                                    optional: false,
+                                        type: String),
             FastlaneCore::ConfigItem.new(key: :webhook,
                                     env_name: "GOOGLE_CHAT_webhook",
                                 description: "A description of your option",
