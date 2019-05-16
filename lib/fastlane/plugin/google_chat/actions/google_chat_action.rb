@@ -9,6 +9,8 @@
       class GoogleChatAction < Action
         def self.run(params)
           
+          UI.message(params)
+
           uri = URI.parse(params[:webhook])
           
           header = {'Content-Type': 'application/json'}
@@ -81,11 +83,50 @@
         
         def self.available_options
           [
-            # FastlaneCore::ConfigItem.new(key: :your_option,
-            #                         env_name: "GOOGLE_CHAT_YOUR_OPTION",
-            #                      description: "A description of your option",
-            #                         optional: false,
-            #                             type: String)
+            FastlaneCore::ConfigItem.new(key: :webhook,
+                                    env_name: "GOOGLE_CHAT_webhook",
+                                description: "A description of your option",
+                                    optional: false,
+                                        type: String)
+
+            FastlaneCore::ConfigItem.new(key: :title,
+                                                env_name: "GOOGLE_CHAT_title",
+                                            description: "A description of your option",
+                                                optional: false,
+                                                    type: String)                                         
+
+
+            FastlaneCore::ConfigItem.new(key: :description,
+                                                env_name: "GOOGLE_CHAT_webhook",
+                                            description: "A description of your option",
+                                                optional: false,
+                                                    type: String)                                         
+
+            FastlaneCore::ConfigItem.new(key: :section1Title,
+                                                env_name: "GOOGLE_CHAT_section1Title",
+                                            description: "A description of your option",
+                                                optional: false,
+                                                    type: String)                                         
+
+
+            FastlaneCore::ConfigItem.new(key: :section1Description,
+                                                env_name: "GOOGLE_CHAT_section1Description",
+                                            description: "A description of your option",
+                                                optional: false,
+                                                    type: String)                         
+
+            FastlaneCore::ConfigItem.new(key: :buttonTitle,
+                                                env_name: "GOOGLE_CHAT_buttonTitle",
+                                            description: "A description of your option",
+                                                optional: false,
+                                                    type: String)                                         
+
+
+            FastlaneCore::ConfigItem.new(key: :buttonUrl,
+                                                env_name: "GOOGLE_CHAT_buttonUrl",
+                                            description: "A description of your option",
+                                                optional: false,
+                                                    type: String)                                         
           ]
         end
         
