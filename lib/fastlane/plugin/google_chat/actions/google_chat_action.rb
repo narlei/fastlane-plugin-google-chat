@@ -62,7 +62,7 @@
           
           # Send the request
           response = http.request(request)
-          
+          UI.message(response)
           UI.message("The google_chat plugin is working!")
         end
         
