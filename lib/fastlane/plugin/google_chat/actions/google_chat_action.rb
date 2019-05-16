@@ -12,7 +12,7 @@
           UI.message(params)
 
           uri = URI.parse(params[:webhook])
-          cards = [
+          cards = {cards: [
             {
               header: {
                 title: params[:title],
@@ -50,7 +50,7 @@
                 }
               ]
             }
-          ]
+          ]}
           # Create the HTTP objects
           http = Net::HTTP.new(uri.host, uri.port)
           http.use_ssl = true
