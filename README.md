@@ -2,6 +2,8 @@
 
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-google_chat)
 
+
+![](https://narlei.com/fastlane-plugin-google.jpg)
 ## Getting Started
 
 This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To get started with `fastlane-plugin-google_chat`, add it to your project by running:
@@ -20,16 +22,16 @@ Send messages to Google Chat
 
 Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
 
-````
+````ruby 
 google_chat(
-      imageUrl: "https:.. IMAGE",
-      webhook: 'http:// webhook',
+      imageUrl: 'URL_OF_ICON',
+      webhook: 'URL_OF_WEBHOOK',
       title: 'TITLE',
-      description: "MESSAGE",
-      section1Title: 'Version',
-      section1Description: '1.1.1',
-      buttonTitle: "OPEN DASHBOARD",
-      buttonUrl: "https:// DASHBOARD"
+      description: 'MESSAGE',
+      section1Title: 'TITLE_SESSION',
+      section1Description: 'DESCRIPTION_SESSION',
+      buttonTitle: "BUTTON_TITLE",
+      buttonUrl: "URL_ACTION"
     )
 ````
 
