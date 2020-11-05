@@ -63,8 +63,8 @@
           
           # Send the request
           response = http.request(request)
-
-          UI.message("Message sent!" + response.read_body)
+          # + response.read_body
+          UI.message("Message sent!")
         end
         
         def self.description
