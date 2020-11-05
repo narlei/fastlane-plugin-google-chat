@@ -14,12 +14,16 @@
             {
               header: {
                 title: params[:title],
-                subtitle: params[:description],
                 imageUrl: params[:imageUrl]
               },
               sections: [
                 {
                   widgets: [
+                    {
+                      textParagraph: {
+                          text: params[:description]
+                      }
+                    },
                     {
                       keyValue: {
                         topLabel: params[:section1Title],
