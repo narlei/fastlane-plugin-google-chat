@@ -14,12 +14,16 @@
             {
               header: {
                 title: params[:title],
-                subtitle: params[:description],
                 imageUrl: params[:imageUrl]
               },
               sections: [
                 {
                   widgets: [
+                    {
+                      textParagraph: {
+                          text: params[:description]
+                      }
+                    },
                     {
                       keyValue: {
                         topLabel: params[:section1Title],
@@ -52,13 +56,14 @@
           # Create the HTTP objects
           http = Net::HTTP.new(uri.host, uri.port)
           http.use_ssl = true
-          http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+          # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
           request = Net::HTTP::Post.new(uri.request_uri)
+          request["Content-Type"] = "application/json"
           request.body = cards.to_json
           
           # Send the request
           response = http.request(request)
-
+          # + response.read_body
           UI.message("Message sent!")
         end
         
