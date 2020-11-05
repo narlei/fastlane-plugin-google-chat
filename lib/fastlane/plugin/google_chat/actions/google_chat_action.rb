@@ -51,15 +51,15 @@
           ]}
           # Create the HTTP objects
           http = Net::HTTP.new(uri.host, uri.port)
-          # http.use_ssl = true
-          # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+          http.use_ssl = true
+          http.verify_mode = OpenSSL::SSL::VERIFY_NONE
           request = Net::HTTP::Post.new(uri.request_uri)
           request.body = cards.to_json
           
           # Send the request
           response = http.request(request)
 
-          UI.message("Message sent!")
+          UI.message("Message sent!" + response)
         end
         
         def self.description
